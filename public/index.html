@@ -2,21 +2,122 @@
 <html>
   <head>
     <title>CSS/HTML Workshop with Drivy</title>
+
+    <style type="text/css">
+	
+	body 
+	{
+		background-image:url(CSS/vacance.jpg) ;
+		margin:0;
+	}
+
+	#element 
+	{
+		width: 50%;
+		margin: auto;
+	}
+	h1.letterpress {
+   margin : 50px 0;                      /* marges en haut et en bas du titre */
+}
+h1.letterpress a {
+   font-size: 70px;         /* taille de la police */
+   color: #305ABC;          /* Couleur de la police */
+   text-decoration: none;       /* Enlèvement du soulignement sur les liens */
+   text-shadow: 0 -2px 0 #222222;   /* Ombre portée qui donne du volume : effet letterpress */
+}
+.grey {
+	color: #A6A6A6;
+	border: solid 1px #D3D3D3;
+	background: #696969;
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#696969', endColorstr='#696969');
+}
+.button {
+	display: inline-block;
+	outline: none;
+	cursor: pointer;
+	text-decoration: none;
+	font: 10px/100% Arial, Helvetica, sans-serif;
+	padding: .5em 2em .55em;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .9em;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.blanc
+{
+width: 50px;
+display: inline-block;
+width: 150px;
+}
+.info
+{
+display: inline-block;
+width: 300px;
+text-align: right;
+padding-left: 0px;
+margin-left: 10px;
+}
+	</style>
   </head>
-  <body>
+  <body id="element">
+  <h1 class="letterpress">
+  <img src="CSS/voiture.png" alt="Drivy" style="width:500px;height:300px;">
+  </h1>
+  <fieldset>
+  	<legend> CAR </legend>
     <div id="car">
-      <input class="model" type="text" placeholder="Car model"/>
-      <input class="price-by-day" type="number" placeholder="Price by day"/>
-      <input class="price-by-km" type="number" placeholder="Price by km"/>
+ 	    <label class="info">
+ 			<span class="required">Model: </span> 
+ 			<input class="model blanc" type="text" placeholder="Car model"  required="required"/>
+    	</label>
+		<div>
+   			<label class="info">
+   				<span class="required">Price by day:</span>
+ 				<input class="price-by-day blanc" type="number" placeholder="Price by day"  required="required"/>
+   			</label>  
+ 		</div>
+ 		<div>	
+            <label class="info">
+      			<span class="required">Price by Km:</span>
+       			<input class="price-by-km blanc" type="number" placeholder="Price by km"  required="required"/>
+       		</label>  
+ 		</div>
     </div>
+   	</fieldset>
+   	<fieldset>
+   	<legend> RENTAL </legend>
     <div id="rental">
-      <input class="begin" type="date" placeholder="Rental begin date"/>
-      <input class="end" type="date" placeholder="Rental end date"/>
-      <input class="distance" type="number" placeholder="Distance in km"/>
-      <input class="option" type="checkbox" placeholder="Deductible option"/>
+    	 <label for="begin" class="info">
+ 		      	<span class="required">Begin:</span>
+ 		      	<input class="begin blanc" type="date" placeholder="Rental begin date"  required="required"/>
+ 		    </label>  
+ 		</div>
+ 		<div>	
+            <label for="end" class="info">
+ 		    	<span class="required">End:</span>
+ 		      	<input class="end blanc" type="date" placeholder="Rental end date"  required="required"/>
+ 		    </label>  
+ 		</div>
+ 		<div>	
+            <label for="distance" class="info">
+ 			   	<span class="required">Price by Km:</span>
+ 		      	<input class="distance blanc" type="number" placeholder="Distance in km"  required="required"/>
+ 		    </label>  
+ 		</div>
+        <div>
+            <label for="option" class="info">
+ 			  	<span class="required">Deductible option:</span>
+            	<input class="option blanc" type="checkbox" placeholder="Deductible option"  required="required"/>
+            </label>  
+        </div>
     </div>
-    <button id="compute">Compute</button>
+    </fieldset>
+    <button id="compute" class="button grey center blanc">Compute</button>
     <div id="actors"></div>
+     
     <script id="template" type="x-tmpl-mustache">
       {{#actors}}
         <div class="actor">
@@ -26,8 +127,10 @@
         </div>
       {{/actors}}
     </script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
     <script src="drivy.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
+
