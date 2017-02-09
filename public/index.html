@@ -1,136 +1,235 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>CSS/HTML Workshop with Drivy</title>
 
-    <style type="text/css">
-	
-	body 
-	{
-		background-image:url(CSS/vacance.jpg) ;
-		margin:0;
-	}
+    <link href= 'index.css' rel='stylesheet' type='text/css' />
+    <script>
+        var temps = 0;
+        var compteur;   
+        function date_heure(id)
+        {
+            date = new Date;
+            annee = date.getFullYear();
+            moi = date.getMonth();
+            mois = new Array('Janvier', 'F&eacute;vrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Ao&ucirc;t', 'Septembre', 'Octobre', 'Novembre', 'D&eacute;cembre');
+            j = date.getDate();
+            jour = date.getDay();
+            jours = new Array('Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi');
+            h = date.getHours();
+            if(h<10)
+            {
+                h = "0"+h;
+            }
+            m = date.getMinutes();
+            if(m<10)
+            {
+                m = "0"+m;
+            }
+            s = date.getSeconds();
+            if(s<10)
+            {
+                s = "0"+s;
+            }
+            resultat = jours[jour]+' '+j+' '+mois[moi]+' '+annee+'  '+h+':'+m+':'+s;
+            document.getElementById(id).innerHTML = resultat;
+            setTimeout('date_heure("'+id+'");','1000');
+            return true;
+        }
+        function function_p306()
+        {   
+            document.querySelector('#car .model').value = "p306"
+            document.querySelector('#car .price-by-day').value = 20
+            document.querySelector('#car .price-by-km').value = 0.1 
+            document.querySelector('#car1 .model1').value = "Peugeot 306"
+            document.querySelector('#car1 .price-by-day1').value = 20
+            document.querySelector('#car1 .price-by-km1').value = 0.1         
+        }
+        function function_rr_sport()
+        {   
+        	document.querySelector('#car .model').value = "rr-sport"
+        	document.querySelector('#car .price-by-day').value = 60
+        	document.querySelector('#car .price-by-km').value = 0.3
+        	document.querySelector('#car1 .model1').value = "Range Rover Sport"
+        	document.querySelector('#car1 .price-by-day1').value = 60
+        	document.querySelector('#car1 .price-by-km1').value = 0.3
+        }
+        function function_porsche_boxster()
+        {  
+        	document.querySelector('#car .model').value = "p-boxster"
+        	document.querySelector('#car .price-by-day').value = 100
+        	document.querySelector('#car .price-by-km').value = 0.45
+        	document.querySelector('#car1 .model1').value = "Porsche Boxster"
+        	document.querySelector('#car1 .price-by-day1').value = 100
+        	document.querySelector('#car1 .price-by-km1').value = 0.45
+        }
+</script>
+</head>
+<body id="element">
+    <header class="header" id="header">
+        <div class="container menubar">
+            <a class="logo" title="location voiture particulier avec Drivy">
+                <svg width="102" height="39" viewBox="0 0 102 39">
+                    <g fill="#3c465a">
+                        <rect height="22" width="6" x="27" y="9"></rect>
+                        <path d="M18,10c-1.4-0.8-3.2-1.4-5.1-1.4c-6.6,0-12,5.1-12,11.5c0,6.3,5.4,11.1,12,11.1c2,0,3.8-0.4,5.1-1.2v1h6V2h-6
+                        V10z M13.1,26.4c-3.4,0-6.2-2.8-6.2-6.3v0c0,0,0,0,0,0c0,0,0,0,0,0v0c0-3.5,2.8-6.3,6.2-6.3c1.1,0,2.2,0.3,3.1,0.9
+                        c0.7,0.4,1.2,0.9,1.7,1.5v8C16.7,25.5,15,26.4,13.1,26.4z"></path>
+                        <rect height="22" width="6" x="44" y="9"></rect>
+                        <polygon points="64.5,21.2 59.5,9 53,9 62.3,31 66.6,31 76,9 69.5,9 "></polygon>
+                        <path d="M94.5,9l-4.9,12.2L84.5,9H78l8,18.6c0.3,0.7,0.3,1.6,0,2.3L82,39h6.5l3.3-7.9h0L101,9H94.5z"></path>
+                        <circle cx="38" cy="12" r="3.2"></circle>
+                        <circle cx="47" cy="4" r="3.2"></circle>
+                    </g>
+                </svg>
+            </a>
+        </div>
+    </header>
+    <font size="-1">
+        <span id="date_heure"></span>
+        <script type="text/javascript">window.onload = date_heure('date_heure');</script>
+        <br/>
+    </font>
+    <div class="homepage_baseline_wrapper" id="homepage_baseline_wrapper">
+        <div class="container">
+            <div class="homepage_baseline_container">
+                <p class="homepage_baseline">
+                    <h2 class="homepage_title">Louez les voitures d'à côté</h2>
+                    <h2 class="homepage_subtitle">Moins cher, plus proche, plus pratique</h2>
+                </p>
+            </div>
+        </div>
+    </div>
+    <fieldset>
+        <legend> CAR </legend>
+        <div id="car"  class="button2 grey2" style="text-align:center;">
+            <span id="conteneur">
+                <div id="conteneur">
+                    <figure>
+                        <span>
+                            <button type="submit" id="button_p306"onclick="function_p306()">
+                                <a>
+                                    <div>
+                                        <svg width="50" height="24" viewBox="0 0 50 24">
+                                            <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none">
+                                                <path d="M45.5732734,22 L47.1617727,22 C47.7070403,22 49.096241,20.493868 49.3431446,19.85 C51.2029711,15 48.6769802,10.9649681 47.1617727,10.175 C45.3752197,9.2435632 40.2685144,7.93777948 40.617657,8.025 C39.1384722,7.60513718 36.4386108,6.95 35.3479249,5.875 C32.6292753,3.19544931 27.5862667,0.833719975 22.0759959,0.5 C17.1727435,0.5 7.8970785,0.5 5.7157066,2.65 C3.88335574,4.58317667 3.12676492,5.9 2.44364875,7.45 C1.76053257,9 1.35296279,13.4 1.35296279,13.4 C-0.100912718,14.612179 -0.237141739,19 0.262276843,19.85 C0.347701724,19.9953914 1.35296284,22 2.75936984,22 L3.89430077,22 C3.80519423,21.5975698 3.75820688,21.1792785 3.75820688,20.75 C3.75820688,17.5743627 6.32957597,15 9.5015205,15 C12.673465,15 15.2448341,17.5743627 15.2448341,20.75 C15.2448341,21.1792785 15.1978468,21.5975698 15.1087402,22 L34.3588339,22 C34.2697274,21.5975698 34.22274,21.1792785 34.22274,20.75 C34.22274,17.5743627 36.7941091,15 39.9660537,15 C43.1379982,15 45.7093673,17.5743627 45.7093673,20.75 C45.7093673,21.1792785 45.6623799,21.5975698 45.5732734,22 L45.5732734,22 Z M41.2859456,11.6666667 C40.0576505,10.6764493 40.2231615,10.5017084 40.2157629,10.5 L41.2859456,10.5 C47.3597865,10.4105721 47.7070416,13.9959937 47.7070416,14 C44.4724155,14.1120886 41.2922872,11.6664702 41.2859456,11.6666667 L41.2859456,11.6666667 Z M18.8121097,2.5 C30.6919183,1.94223091 32.7244843,6.83108385 32.7244843,6.83333333 C30.5975584,7.4931006 32.7244843,8.97024105 32.7244843,9 L23.0928403,9 C23.0928403,8.97024105 20.8623711,9.03719869 19.8822923,9 C17.741927,6.83108409 17.7837091,3.4660574 17.741927,2.5 C18.3110283,2.51065096 18.8121097,2.55276947 18.8121097,2.5 L18.8121097,2.5 Z M7.80577483,4.66666667 C8.0176624,3.72595538 11.0552669,2.49999999 15.1889342,2.5 C15.1889344,6.83333333 15.7903427,7.84452943 16.2436713,9 C5.86686213,9 8.01766241,4.66666667 7.80577483,4.66666667 L7.80577483,4.66666667 Z M9.5,24 C11.4329966,24 13,22.4329966 13,20.5 C13,18.5670034 11.4329966,17 9.5,17 C7.56700338,17 6,18.5670034 6,20.5 C6,22.4329966 7.56700338,24 9.5,24 L9.5,24 Z M40,24 C41.9329966,24 43.5,22.4329966 43.5,20.5 C43.5,18.5670034 41.9329966,17 40,17 C38.0670034,17 36.5,18.5670034 36.5,20.5 C36.5,22.4329966 38.0670034,24 40,24 L40,24 Z" fill="#000000"></path>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </button>
+                        </span>
+                    </figure>
+                    <figure>
+                        <span>
+                            <button type="submit" id="button_porsche_boxster" onclick="function_porsche_boxster()">
+                                <a>
+                                    <div>
+                                        <svg width="67" height="21" viewBox="0 0 67 21">
+                                            <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none">
+                                                <path d="M5.54928592,17.6178338 C3.51481554,17.5517936 -0.346530754,17.1301256 0.0249949995,14.8643636 C0.527181579,11.8017622 0.0249949995,10.5256782 0.0249949995,9.76002788 C0.527181602,9.97913283 1.02936812,9.97913283 1.78264803,9.76002788 C2.28483457,7.20786005 0.276088289,7.71829361 0.276088289,7.71829361 C0.276088289,7.71829361 0.969111733,5.6735183 2.99393637,5.67351815 C5.01876101,5.67351801 7.33284635,5.36719045 8.48988896,4.75453498 C9.64693161,4.14187953 19.1037405,0.722376165 22.3155993,0.572223735 C38.6933616,-0.193426616 43.4904291,5.36719061 44.6474718,5.97984588 C45.8045144,6.59250115 48.6971211,6.59250132 48.6971211,6.59250132 C48.6971211,6.59250132 61.7138504,7.51148477 65.7635001,10.268434 C66.0205478,10.5860171 66.6971563,11.5509608 66.7600109,11.7273198 C66.8977005,12.1136525 63.5596971,10.5707166 61.3889551,10.5707166 C62.4743261,12.7926038 63.5596971,13.9035475 66.8158101,13.9035475 C66.8158101,13.9035475 67.3659349,15.3747971 66.5647168,17.1613146 C65.7634987,18.9478321 63.4442791,19 61.9721396,19 L61.1432847,19 C61.2404186,18.5731943 61.2917577,18.1285652 61.2917577,17.6717482 C61.2917577,14.4298445 58.706137,11.8017622 55.5166121,11.8017622 C52.3270872,11.8017622 49.7414664,14.4298445 49.7414664,17.6717482 C49.7414664,18.1285652 49.7928056,18.5731943 49.8899394,19 L16.9508657,19 C17.0479995,18.5731943 17.0993387,18.1285652 17.0993387,17.6717482 C17.0993387,14.4298445 14.5137179,11.8017622 11.324193,11.8017622 C8.15236799,11.8017622 5.57776306,14.4007571 5.54928592,17.6178338 L5.54928592,17.6178338 Z M26,8.00000023 C25.0024749,5.84009761 23.499627,3.14113788 23.449209,2.1257172 C24.7661091,2.12571719 35.4435635,1.57089812 40.8955428,6.00945092 C40.8955428,6.00945092 39.6977353,6.09822191 39.6977353,7.20786011 C39.6977353,7.71829368 39.8051461,8.00000011 40.895542,8.00000023 C40.895542,8.00000023 34.7231669,8.00000023 26,8.00000023 L26,8.00000023 Z M21.2810419,2.10352444 C21.8230837,4.88770753 22.5531437,6.66050522 23.0000003,8.00000023 C17.5795824,8.00000023 17.0000002,8.05651211 14.8394991,8 C13.7547124,7.97162529 10.4402061,7.11505401 13.6924568,4.88770753 C13.6924568,4.88770753 18.5708329,2.10352444 21.2810419,2.10352444 L21.2810419,2.10352444 Z M11.3000488,21 C13.2330455,21 14.8000488,19.4329966 14.8000488,17.5 C14.8000488,15.5670034 13.2330455,14 11.3000488,14 C9.3670522,14 7.80004883,15.5670034 7.80004883,17.5 C7.80004883,19.4329966 9.3670522,21 11.3000488,21 L11.3000488,21 Z M55.6500244,21 C57.583021,21 59.1500244,19.4329966 59.1500244,17.5 C59.1500244,15.5670034 57.583021,14 55.6500244,14 C53.7170278,14 52.1500244,15.5670034 52.1500244,17.5 C52.1500244,19.4329966 53.7170278,21 55.6500244,21 L55.6500244,21 Z" fill="#000000"></path>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </button>
+                        </span>
+                    </figure>
+                    <figure>
+                        <span>
+                            <button type="submit" id="button_rr_sport" onclick="function_rr_sport()">
+                                <a>
+                                    <div>
+                                        <svg width="67" height="27" viewBox="0 0 67 27">
+                                            <g fill-rule="evenodd" fill="none" stroke-width="1" stroke="none">
+                                                <path d="M21.6313184,24 C21.6369787,23.8938089 21.6398454,23.786866 21.6398454,23.6792453 C21.6398454,20.4436903 19.0487177,17.8207547 15.8523996,17.8207547 C12.6560816,17.8207547 10.0649539,20.4436903 10.0649539,23.6792453 C10.0649539,23.786866 10.0678206,23.8938089 10.0734809,24 C10.0649539,24 4.99999936,24.3390167 4.99999999,21 C5,21 5,4 5,4 C5,1.83364094 5.84672597,0 8,0 C17.841633,0 31.6804935,2.51114557e-07 35.9999993,0 C40.3195051,-2.51114557e-07 41.8496423,3.35947755 42.2373472,3.74953854 C44.7206742,6.24795631 47.6205337,9.16543623 47.6205337,9.16543623 C47.6205337,9.16543623 57.4635408,8.83364094 64.9999999,11 C65.4576693,11.5076388 65.9233625,13.0119789 65.9233627,14 L62.4999999,14 C62.4999999,16.1663591 63.9999999,17 63.9999999,17 L65.9233627,17 C65.9233627,17 67,17.8308725 67,19.9972315 C67,22.9491819 63.6990817,23.8411049 61.8928577,23.97971 C61.8978243,23.8801898 61.9003376,23.7800147 61.9003376,23.6792453 C61.9003376,20.4436903 59.3092099,17.8207547 56.1128919,17.8207547 C52.9165739,17.8207547 50.3254461,20.4436903 50.3254461,23.6792453 C50.3254461,23.786866 50.3283128,23.8938089 50.3339732,24 L21.6313184,24 Z M4,8 L2.99995798,8 C0.4998529,8 8.86945772e-12,9.05263158 1.88437977e-15,11.1578947 C-9.77518366e-12,13.4584223 3.80314323e-08,12.7368421 1.88437977e-15,14.8421053 C-3.80314286e-08,16.9473684 0.499852893,18 2.99995802,18 L3.99999981,18 L4,8 L4,8 Z M36.496633,3.00996751 C36.9444158,2.96192413 37.8206764,3.59215387 38.646128,4.0900449 C40.7956229,6.31964243 42,7.53765254 42,7.53765254 C42,7.53765254 42,7.48819159 42,8.60299022 C37.7010101,8.60299022 40.75,11 40.75,11 L30,11 L30,3.00996751 C30,3.00996751 36.0939394,2.98754061 36.496633,3.00996751 L36.496633,3.00996751 Z M16,3 L8.99703014,3 C8.4463856,3 8,3.45303631 8,3.99703014 L8,10.0029699 C8,10.5536144 8.45303631,11 8.99703014,11 L16,11 L16,3 L16,3 Z M17.9998207,2.96283621 L25.0027903,2.96283621 C25.5534349,2.96283621 25.9998205,3.41587252 25.9998205,3.95986635 L25.9998205,9.96580607 C25.9998205,10.5164506 25.5467841,10.9628362 25.0027903,10.9628362 L17.9998205,10.9628362 L17.9998207,2.96283621 L17.9998207,2.96283621 Z M15.75,27 C17.6829966,27 19.25,25.4329966 19.25,23.5 C1719.25,21.5670034 17.6829966,20 15.75,20 C13.8170034,20 12.25,21.5670034 12.25,23.5 C12.25,25.4329966 13.8170034,27 15.75,27 L15.75,27 Z M56.1999512,27 C58.1329478,27 59.6999512,25.4329966 59.6999512,23.5 C59.6999512,21.5670034 58.1329478,20 56.1999512,20 C54.2669545,20 52.6999512,21.5670034 52.6999512,23.5 C52.6999512,25.4329966 54.2669545,27 56.1999512,27 L56.1999512,27 Z" fill="#000000"></path>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </button>
+                        </span>
+                    </figure>
+                </span>
+            </div>
+            <div id="car1">
+               <label class="info">
+                <span class="required">Car</span>
+                <input class="model1" type="text" disabled="disabled"/>
+            </label>
+            <div>
+                <div>
+                    <label class="info">
+                        <span class="required">Model: </span> 
+                        <input class="model" id="model" type="text" placeholder="Car model"  required="required" disabled="disabled"/>
+                    </label>
+                </div>
+                <div>
+                    <label class="info">
+                        <span class="required">Price by day:</span>
+                        <input class="price-by-day" id="price-by-day" type="number" placeholder="Price by day"  required="required" disabled="disabled"/>
+                    </label>  
+                </div>
+                <div>   
+                    <label class="info">
+                        <span class="required">Price by Km:</span>
+                        <input class="price-by-km" id="price-by-km" type="number" placeholder="Price by km"  required="required" disabled="disabled"/>
+                    </label>  
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend> RENTAL </legend>
+                <div id="rental">
+                    <div>
+                        <label for="begin" class="info">
+                            <span class="required">Begin:</span>
+                            <input class="begin" type="date" placeholder="Rental begin date"  required="required"/>
+                        </label>  
+                    </div>
+                    <div>   
+                        <label for="end" class="info">
+                            <span class="required">End:</span>
+                            <input class="end" type="date" placeholder="Rental end date"  required="required"/>
+                        </label>  
+                    </div>
+                    <div>   
+                        <label for="distance" class="info">
+                            <span class="required">Price by Km:</span>
+                            <input class="distance" type="number" placeholder="Distance in km"  required="required"/>
+                        </label>  
+                    </div>
+                    <div>
+                        <label for="option" class="info">
+                            <span class="required">Deductible option:</span>
+                            <input class="option" type="checkbox" placeholder="Deductible option"  required="required" />
+                        </label>  
+                    </div>
+                </div>
+            </fieldset>
+            <button id="compute" class="button white">Compute</button>
+            <fieldset>
+                <div id="actors"></div>
+                <script id="template" type="x-tmpl-mustache">
+                  {{#actors}}
+                  <div class="actor">
+                      <span> {{who}} </span>
+                      <span> {{type}} </span>
+                      <span>  {{amount}} </span>
+                  </div>
+                  {{/actors}}
+                  {{#rentals}}
+                  <div class="rentals">
+                      <span>  {{driver}}   </span>
+                  </div> 
+                  {{/rentals}}
+              </script>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+              <script src="drivy.js"></script>
+              <script src="index.js"></script>
 
-	#element 
-	{
-		width: 50%;
-		margin: auto;
-	}
-	h1.letterpress {
-   margin : 50px 0;                      /* marges en haut et en bas du titre */
-}
-h1.letterpress a {
-   font-size: 70px;         /* taille de la police */
-   color: #305ABC;          /* Couleur de la police */
-   text-decoration: none;       /* Enlèvement du soulignement sur les liens */
-   text-shadow: 0 -2px 0 #222222;   /* Ombre portée qui donne du volume : effet letterpress */
-}
-.grey {
-	color: #A6A6A6;
-	border: solid 1px #D3D3D3;
-	background: #696969;
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#696969', endColorstr='#696969');
-}
-.button {
-	display: inline-block;
-	outline: none;
-	cursor: pointer;
-	text-decoration: none;
-	font: 10px/100% Arial, Helvetica, sans-serif;
-	padding: .5em 2em .55em;
-	text-shadow: 0 1px 1px rgba(0,0,0,.3);
-	-webkit-border-radius: .5em; 
-	-moz-border-radius: .5em;
-	border-radius: .9em;
-	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-	box-shadow: 0 1px 2px rgba(0,0,0,.2);
-}
-.blanc
-{
-width: 50px;
-display: inline-block;
-width: 150px;
-}
-.info
-{
-display: inline-block;
-width: 300px;
-text-align: right;
-padding-left: 0px;
-margin-left: 10px;
-}
-	</style>
-  </head>
-  <body id="element">
-  <h1 class="letterpress">
-  <img src="CSS/voiture.png" alt="Drivy" style="width:500px;height:300px;">
-  </h1>
-  <fieldset>
-  	<legend> CAR </legend>
-    <div id="car">
- 	    <label class="info">
- 			<span class="required">Model: </span> 
- 			<input class="model blanc" type="text" placeholder="Car model"  required="required"/>
-    	</label>
-		<div>
-   			<label class="info">
-   				<span class="required">Price by day:</span>
- 				<input class="price-by-day blanc" type="number" placeholder="Price by day"  required="required"/>
-   			</label>  
- 		</div>
- 		<div>	
-            <label class="info">
-      			<span class="required">Price by Km:</span>
-       			<input class="price-by-km blanc" type="number" placeholder="Price by km"  required="required"/>
-       		</label>  
- 		</div>
-    </div>
-   	</fieldset>
-   	<fieldset>
-   	<legend> RENTAL </legend>
-    <div id="rental">
-    	 <label for="begin" class="info">
- 		      	<span class="required">Begin:</span>
- 		      	<input class="begin blanc" type="date" placeholder="Rental begin date"  required="required"/>
- 		    </label>  
- 		</div>
- 		<div>	
-            <label for="end" class="info">
- 		    	<span class="required">End:</span>
- 		      	<input class="end blanc" type="date" placeholder="Rental end date"  required="required"/>
- 		    </label>  
- 		</div>
- 		<div>	
-            <label for="distance" class="info">
- 			   	<span class="required">Price by Km:</span>
- 		      	<input class="distance blanc" type="number" placeholder="Distance in km"  required="required"/>
- 		    </label>  
- 		</div>
-        <div>
-            <label for="option" class="info">
- 			  	<span class="required">Deductible option:</span>
-            	<input class="option blanc" type="checkbox" placeholder="Deductible option"  required="required"/>
-            </label>  
-        </div>
-    </div>
-    </fieldset>
-    <button id="compute" class="button grey center blanc">Compute</button>
-    <div id="actors"></div>
-     
-    <script id="template" type="x-tmpl-mustache">
-      {{#actors}}
-        <div class="actor">
-          <span>{{who}}</span>
-          <span>{{type}}</span>
-          <span>{{amount}}</span>
-        </div>
-      {{/actors}}
-    </script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
-    <script src="drivy.js"></script>
-    <script src="index.js"></script>
-  </body>
-</html>
+              <script src="mustache.min.js"></script>
+
+          </fieldset>
+      </body>
+      </html>
 

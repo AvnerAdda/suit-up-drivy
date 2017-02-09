@@ -1,0 +1,145 @@
+    	    body 
+    {
+        margin:0;
+    }
+    h2 
+	{
+		font-family: Arial;
+		font-size: 47px;
+		font-style: normal;
+		font-variant: small-caps;
+		font-weight: 100;
+	}    
+	#element 
+	{
+		width: 50%;
+		margin: auto;
+		background: lightgoldenrodyellow;
+		color: #3c465a;
+	}
+	.white 
+	{
+    	border: solid 1px #D3D3D3;
+    	background: oldlace;
+    	width: 100px;
+    	margin: initial;
+    	position: initial;
+    	display: none;
+	}
+.button {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font: 10px/100% Arial, Helvetica, sans-serif;
+    padding: .5em 2em .55em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .9em;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: block;
+}
+    .info
+    {
+        display: inline-block;
+        width: 300px;
+        text-align: right;
+        padding-left: 0px;
+        margin-left: 10px;
+    }
+    .header .logo {
+        display: inline-block;
+        padding: 9px 0;
+    }
+    .header {
+    height: 50px;
+    }
+    .homepage_baseline {
+    position: absolute;
+    top: 50%; 
+    left: 0;
+    right: 0;
+    }
+    .homepage_baseline_container {
+    position: relative;
+    min-height: 200px;
+    height: 200px;
+    max-height: calc(100vh - 200px);
+     background-image: url("vacances.jpg");
+    background-repeat: no-repeat;
+    }
+    .homepage_baseline 
+    {
+    position: absolute;
+    top: 50%;
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    left: 0;
+    right: 0;
+    }
+    .homepage_title 
+    {
+    margin: 0;
+    text-align: center;
+    color: #000;
+    font-size: 40px;
+    }
+    .homepage_subtitle {
+    margin: 5px 0 0 0;
+    text-align: center;
+    color: #000;
+    font-size: 20px;
+    }
+    input:focus {
+    background: #eaeaea;
+    }
+    input[type=checkbox] {
+    width: 10px;
+    }
+    legend
+    {
+    font-variant: small-caps;
+    }
+    a
+    {
+    	color: #2ea2ea;
+    	text-decoration: none;
+    }
+    input[type=text][type=date], select 
+    {
+    	width: 200px;
+    	padding: 12px 20px;
+    	margin: 8px 0;
+    	display: inline-block;
+    	border: 1px solid #ccc;
+    	border-radius: 10px;
+    	box-sizing: border-box;
+    	text-align: center;
+    }
+    fieldset 
+    {
+    	background-color: #f2f2f2;
+    	border-radius: 10px;
+    	text-align: center;
+    }
+    div 
+    {
+    	text-align: center;
+    	border-radius: 5px;
+    	padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: block;
+    }
+    button[type=submit]
+    {
+    	background-color: #f2f2f2;
+    	border-radius: 5px;
+    }
